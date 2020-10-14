@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color: lightgray;
+   
+  }
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkcyan;
+    background-color: lightsteelblue;
+    font-size: 55px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap; 
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
