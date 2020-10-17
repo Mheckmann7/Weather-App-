@@ -1,6 +1,6 @@
 //Constants and variables
-const  API_KEY = 'b428edff442fe38bb8486623bb43ce3b'; 
-const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?';
+const  API_KEY = CONFIG.openWeatherAPIKey; 
+const BASE_URL = 'https://proxify-app-server.herokuapp.com/api';
 let weatherData;
 
 
@@ -9,20 +9,19 @@ const $title = $('#title');
 const $temp = $('#temp'); 
 const $index = $('#index'); 
 const $desc = $('#desc'); 
-const $main = $('main');
+//const $main = $('main');
 const $form = $('form');
 const $input = $('input[type="text"]');
 //Event listeners
 $form.on('submit',handleGetData); 
-//Functions 
 
-//q={city name}&appid={API key}
+//Functions 
 function handleGetData(event) {
     event.preventDefault(); 
-    userInput = $input.val();
+    const userInput = $input.val();
     if(!userInput) return; 
 
-    $.ajax(BASE_URL + 'q=' + userInput + '&units=metric&appid=' + API_KEY)
+    $.ajax(BASE_URL + '?city=' + userInput)
     .then(function(data) {
         console.log('Data: ', data); 
         weatherData = data; 
